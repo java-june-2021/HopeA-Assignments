@@ -14,6 +14,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Entity
 @Table(name="books")
@@ -38,6 +40,7 @@ public class Book {
 	@DateTimeFormat(pattern = "MM/dd/yyyy HH:mm:ss")
 	private Date createdAt;
 	private Date updatedAt;
+	//private Object bService;
 		
 	public Book() {
 		
@@ -49,6 +52,16 @@ public class Book {
 		this.language = language;
 		this.numberOfPages = pages;
 	}
+	
+	
+
+//	public Object getbService() {
+//		return bService;
+//	}
+//
+//	public void setbService(Object bService) {
+//		this.bService = bService;
+//	}
 
 	public Long getId() {
 		return id;
@@ -119,4 +132,16 @@ public class Book {
 	    protected void onUpdate(){
 	        this.updatedAt = new Date();
 	    }
+
+	public int size() {
+		return 0;
+	}
+
+	public void set(int id2, Book book) {
+		
+	}
+
+	public void remove(int id2) {
+		
+	}
 }

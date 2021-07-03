@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>New Book</h1>
-<form:form action="/books/new" method="post" modelAttribute="book">
+<form:form action="/books" method="post" modelAttribute="book">
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>

@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>New Book</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>New Book</h1>
-<form:form action="/books/new" method="post" modelAttribute="book">
+<h1>Update Book</h1>
+<form:form action="/books/edit/${id}" method="post" modelAttribute="book">
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>

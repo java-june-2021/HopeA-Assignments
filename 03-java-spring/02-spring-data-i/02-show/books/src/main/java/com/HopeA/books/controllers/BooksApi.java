@@ -35,5 +35,11 @@ public class BooksApi {
 		return book;
 	}
 	
+//	@RequestMapping(value="/books/delete/{id}")
+//    public String destroyBook(@PathVariable("id") int id) {
+//        bService.destroyBook(id);
+//        return "redirect:/books";
+//    }
+	
 
 }

@@ -10,6 +10,7 @@ import com.HopeA.books.repositories.BookRepository;
 @Service
 public class BookService {
 	private BookRepository bRepo;
+	private Book book;
 	public BookService(BookRepository bRepo) {
 		this.bRepo = bRepo;
 	}
@@ -29,12 +30,18 @@ public class BookService {
 	}
 	
 	//Update
-	public Book updateBook(Book book) {
+	public Book updateBook(Long id, Book book) {
+		if (bRepo.existsById(id))  {
+			bRepo.save(book);
+		}
 		return this.bRepo.save(book);
 	}
 	//Delete
-	public String deleteBook(Long id) {
-		return "Book " + id + " has been deleted.";
+	public void destroyBook(Long id) {
+		//book = null;
+		if (bRepo.existsById(id)) {
+			bRepo.deleteById(id);
+		}
 	}
 
 	public Book findBook(int index) {
@@ -43,5 +50,10 @@ public class BookService {
 
 	public Book findBook(String string) {
 		return null;
+	}
+
+	public void deleteBook(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
